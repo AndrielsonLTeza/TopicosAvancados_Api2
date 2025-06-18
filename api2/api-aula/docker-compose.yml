@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  api2:
+    build: .
+    container_name: api2-node
+    environment:
+      - NODE_ENV=production
+      # - PORT=3000
+      # Adicione outras variáveis de ambiente conforme seu projeto
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: unless-stopped
